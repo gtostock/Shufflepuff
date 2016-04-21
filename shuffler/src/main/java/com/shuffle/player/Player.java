@@ -160,6 +160,7 @@ class Player<Identity, Bytestring> {
             } catch (Matrix m) {
                 blame = m;
             } catch (Exception e) {
+                // TODO must handle timeouts effectively here.
                 e.printStackTrace();
             }
 
@@ -167,6 +168,18 @@ class Player<Identity, Bytestring> {
 
             if (attempt > settings.maxRetries) {
                 return null;
+            }
+
+            // Go through players and check if they are eliminated.
+            for (VerificationKey player : players) {
+                // Who blames this player?
+
+                // Does everyone blame this player?
+
+                // Why is this player blamed? Is it objective?
+
+                // If not, include evidence.
+
             }
 
             // TODO
